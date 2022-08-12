@@ -14,12 +14,11 @@ local Sets = {
 }
 
 
-local function generatePassword(size)
-    local String = ""
-    local lastCharacter = ""
-    for i = 1, size, 1 do
-        local randomSet = math.random(1, 3)
-        local SetToChooseFrom = Sets[randomSet]
+local function generatePassword(size : number)
+    local String : string = ""
+    for i : number = 1, size, 1 do
+        local randomSetIndex : number = math.random(1, 3)
+        local SetToChooseFrom = Sets[randomSetIndex]
                 
         String = String..SetToChooseFrom[math.random(1, #SetToChooseFrom)]
     end
